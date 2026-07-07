@@ -88,7 +88,9 @@ COURT_KEYWORDS = [
 ]
 
 def classify_by_keywords(subject):
-    subject_lower = subject.lower()
+    subject_lower = str(subject).lower().strip()
+    if not subject_lower or subject_lower in ['nan', 'none', '']:
+        return "Other", 1.0
     score = sum(1 for kw in COURT_KEYWORDS if kw in subject_lower)
     total = len(COURT_KEYWORDS)
     confidence = score / total
