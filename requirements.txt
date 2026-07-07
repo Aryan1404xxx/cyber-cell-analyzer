@@ -2,3 +2,6 @@ streamlit
 pandas
 openpyxl
 rapidfuzz
+sentence-transformers
+torch
+scikit-learn
